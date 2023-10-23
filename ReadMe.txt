@@ -1,0 +1,7 @@
+Character Encoding Assumption: The scheme assumes that both header names and values are encoded as ASCII strings. This means it expects that all characters in these strings can be represented in a single byte. If there's a need to support non-ASCII characters or other character encodings, this scheme would need modification.
+
+Maximum Limits Assumption: The implementation assumes that the message will not exceed the specified maximum limits. It performs checks for the maximum number of headers, maximum header name and value sizes, and the maximum payload size. If any of these limits are exceeded, it throws an error. If these limits need to be adjusted, the code should be modified accordingly.
+
+Text Encoding and Decoding: The scheme uses TextEncoder and TextDecoder for encoding and decoding strings. These functions are used to convert text to and from bytes. If there are specific requirements for character encoding or decoding, these parts of the code may need to be adapted.
+
+Message Object Format: The assumption is that the Message object has a specific structure with headers as an object and payload as a Uint8Array. If the structure of the Message object changes or if different data types are used, the code would need adjustments.
